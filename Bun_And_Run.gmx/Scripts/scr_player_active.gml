@@ -7,8 +7,6 @@ get_input();
 // Player is in the air
 if (!place_meeting(x, y+1, obj_solid)) {
     
-//    vspd += grav;
-    
     // Double Jump
     if (space && !doubleJumped) {
         vspd = pDblJump;
@@ -40,6 +38,7 @@ else {
 // Moving right or left
 if ((!down && right) || (!down && left)) {
     hspd += (right-left)*pAccel;
+    image_speed = 0.5;
 
     // enforce speed limit
     if (hspd > pSpd) hspd = pSpd;
@@ -49,6 +48,7 @@ if ((!down && right) || (!down && left)) {
 // Crawling right or left
 else if ((down && right) || (down && left)) {
     hspd += (right-left)*pAccel;
+    image_speed = 0.25;
 
     // enforce speed limit
     if (hspd > pSpd) hspd = pSpd/3;
@@ -58,6 +58,8 @@ else if ((down && right) || (down && left)) {
 // Stop moving, apply friction
 else {
     apply_friction(pAccel);
+    image_speed = 0;
+    image_index = 0;
 }
 
 // Set sprite direction
@@ -65,4 +67,4 @@ if (hspd != 0) {
     image_xscale = sign(hspd);
 }
 
-move(solid);
+move(obj_solid);

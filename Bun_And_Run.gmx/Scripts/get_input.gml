@@ -1,13 +1,13 @@
 ///get_input
 
 //Keyboard button controls (no ganepad connected)
-shift_press = keyboard_check_pressed(vk_shift);
-tab_press = keyboard_check_pressed(vk_tab);
+//shift_press = keyboard_check_pressed(vk_shift);
+//tab_press = keyboard_check_pressed(vk_tab);
 
 space = keyboard_check_pressed(vk_space);
 space_release = keyboard_check_released(vk_space);
 
-ctrl = keyboard_check(vk_control);
+//ctrl = keyboard_check(vk_control);
 
 esc = keyboard_check(vk_escape);
 
@@ -29,13 +29,13 @@ if (gamepad_is_connected(gp_id)) {
     if (gamepad_axis_value(gp_id, gp_axislv) > 0) down = true;
     else down = false;
     if (gamepad_axis_value(gp_id, gp_axislv) <= 0) down_release = true;
-    //Weapon swing
+/*    //Weapon swing
     ctrl = gamepad_button_check_pressed(gp_id, gp_face3);
     //Grog mode
     shift_press = gamepad_button_check_pressed(gp_id, gp_face2);
     //Groggrog mode
     tab_press = gamepad_button_check_pressed(gp_id, gp_face4);
-    //Restart
+*/    //Restart
     esc = gamepad_button_check_pressed(gp_id, gp_select);
 }
 

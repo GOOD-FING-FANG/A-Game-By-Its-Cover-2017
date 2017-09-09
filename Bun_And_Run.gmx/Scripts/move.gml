@@ -7,6 +7,27 @@ if (!place_meeting(x, y+1, obj_solid)) {
     
 }
 
+//Horizontal Collision
+if (place_meeting(x+hspd, y, collision_object)) {
+    while (!place_meeting(x+sign(hspd), y, collision_object)) {
+        x += sign(hspd);
+    }
+    hspd = 0;
+}
+
+x += hspd;
+
+//Vertical Collision
+if (place_meeting(x, y+vspd, collision_object)) {
+    while (!place_meeting(x, y+sign(vspd), collision_object)) {
+        y += sign(vspd);
+    }
+    vspd = 0;
+}
+
+y += vspd;
+
+/*
 // Horizontal Collisions
 if (place_meeting(x+hspd, y, collision_object)) {
     //while (!place_meeting(x+sign(hspd), y, collision_object)) {
@@ -32,9 +53,8 @@ x += hspd;
 if (place_meeting(x, y+vspd, collision_object)) {
     while (!place_meeting(x, y+sign(vspd), collision_object)) {
         y += sign(vspd);
-        vspd = 0;
     }
     vspd = 0;
 }
 y += vspd;
-
+*/
