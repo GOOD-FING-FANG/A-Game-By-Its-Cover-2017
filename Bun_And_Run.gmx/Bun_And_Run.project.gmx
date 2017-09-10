@@ -6,11 +6,15 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\spr_bun</sprite>
     <sprite>sprites\spr_burger</sprite>
     <sprite>sprites\spr_lettuce</sprite>
     <sprite>sprites\spr_tomato</sprite>
     <sprite>sprites\spr_solid</sprite>
+    <sprite>sprites\spr_bun_top</sprite>
+    <sprite>sprites\spr_bun_bottom</sprite>
+    <sprite>sprites\spr_pickle</sprite>
+    <sprite>sprites\spr_cheese</sprite>
+    <sprite>sprites\spr_onion</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -25,6 +29,13 @@
     <object>objects\obj_burger</object>
     <object>objects\obj_solid</object>
     <object>objects\obj_lettuce</object>
+    <object>objects\obj_tomato</object>
+    <object>objects\obj_pickle</object>
+    <object>objects\obj_cheese</object>
+    <object>objects\obj_onion</object>
+    <object>objects\obj_bun_top</object>
+    <object>objects\obj_bun_bottom</object>
+    <object>objects\obj_gui</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\Test</room>

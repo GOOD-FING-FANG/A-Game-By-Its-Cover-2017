@@ -2,33 +2,16 @@
 
 get_input();
 
-// ---------- Jump ----------
 
-// Player is in the air
-if (!place_meeting(x, y+1, obj_solid)) {
-    
-    // Double Jump
-    if (space && !doubleJumped) {
-        vspd = pDblJump;
-        doubleJumped = true;
-    }
-    
-    // Control the jump height
-    if (space_release && vspd < -6) {
-        vspd = -6;
-    }
-
-}
-
+// ----------- Jump ----------
 // Player is on the ground 
-else {
-    vspd = 0;
-    
-    // Jumping code
-    if (space && !down) {
-        vspd = pJumpHeight;
-        doubleJumped = false;
+if (place_meeting(x, y+1, obj_solid) && space) {
+    if (!launched) {   
+        vspd = -30;
+        gravOn = false;
+        launched = true;
     }
+    else vspd = pJumpHeight;
 }
 
 // ---------- End Jump ----------
@@ -36,23 +19,13 @@ else {
 // ---------- Horizontal Movement ----------
 
 // Moving right or left
-if ((!down && right) || (!down && left)) {
+if (right || left) {
     hspd += (right-left)*pAccel;
     image_speed = 0.5;
 
     // enforce speed limit
     if (hspd > pSpd) hspd = pSpd;
     if (hspd < -pSpd) hspd = -pSpd;
-} 
-
-// Crawling right or left
-else if ((down && right) || (down && left)) {
-    hspd += (right-left)*pAccel;
-    image_speed = 0.25;
-
-    // enforce speed limit
-    if (hspd > pSpd) hspd = pSpd/3;
-    if (hspd < -pSpd) hspd = -pSpd/3;
 } 
 
 // Stop moving, apply friction

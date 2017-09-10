@@ -33,19 +33,29 @@ pAccel = 1; //acceleration and friction coefficient
 hspd = 0; //current horizontal speed
 vspd = 0; //current vertical speed
 grav = 1.5; //gravity
+gravOn = true;  //flag to start applying gravity
+launched = false;
+bottom_collided = false;
 
 // Player Stats Variables
 hp = 14; //Current hit points
 maxhp = 16; //Maximum hit points
-pJumpHeight = -20; //max jump height
-pDblJump = -15; //Double Jump Height
+pJumpHeight = -16; //max jump height
 
-doubleJumped = false;
-
-//Start the toppings array index
+//Start the toppings array &amp; index
 index = 0;
-
 topping[index] = "";
+
+//Index the x location of the top and bottom buns now
+//cuz for whatever reason fatal errors appear on the draw event
+//even through it's inside an if statement that is not valid
+//until the object exists
+randomize();
+top_bunx = random_range(40,600);
+bottom_bunx = random_range(40,600);
+
+//Make the top bun
+instance_create(top_bunx,32,obj_bun_top);
 </string>
           </argument>
         </arguments>
@@ -74,6 +84,181 @@ topping[index] = "";
 scr_player_active();
 
 generator();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_bun_bottom">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>with(other) {
+    instance_destroy();
+}
+
+bottom_collided = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_bun_top">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (!bottom_collided) { 
+    instance_create(bottom_bunx,4768,obj_bun_bottom);
+    gravOn = true;
+    obj_bun_top.collided = true;
+}
+
+else {
+    topping[index] = spr_bun_top;
+    index++;
+
+    with (other) {
+        instance_destroy();
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_onion">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>topping[index] = spr_onion;
+index++;
+
+with (other) {
+    instance_destroy();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_cheese">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>topping[index] = spr_cheese;
+index++;
+
+with (other) {
+    instance_destroy();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_pickle">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>topping[index] = spr_pickle;
+index++;
+
+with (other) {
+    instance_destroy();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_tomato">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>topping[index] = spr_tomato;
+index++;
+
+with (other) {
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>
@@ -124,12 +309,19 @@ with (other) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
+            <string>if (bottom_collided) {
+    draw_sprite(spr_bun_bottom,1,obj_burger.x,obj_burger.y+4);
+}
+
+draw_self();
 
 //Drawing toppings
 if (index &gt; 0) {
     for (n = 0; n &lt; array_length_1d(topping); n++) {
-        draw_sprite(topping[n], 1, obj_burger.x, (obj_burger.y-4*n));
+        if (topping[n] == spr_bun_top) {
+            draw_sprite(topping[n], 1, obj_burger.x, (obj_burger.y-13-4*n));
+        }
+        else draw_sprite(topping[n], 1, obj_burger.x, (obj_burger.y-9-4*n));
     }
 }
 </string>

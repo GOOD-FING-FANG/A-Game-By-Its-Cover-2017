@@ -3,7 +3,7 @@ var amount = argument[0];
 
 if (hspd != 0) {
     if (abs(hspd)-amount > 0) {
-        hspd -= amount*image_xscale;
+        hspd -= amount*image_xscale/3;
     } else {
         hspd = 0;
     }
