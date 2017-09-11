@@ -285,6 +285,7 @@ with (other) {
 index++;
 
 with (other) {
+    obj_burger.hspd += weight;
     instance_destroy();
 }
 </string>

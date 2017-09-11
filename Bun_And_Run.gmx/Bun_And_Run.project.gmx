@@ -15,6 +15,7 @@
     <sprite>sprites\spr_pickle</sprite>
     <sprite>sprites\spr_cheese</sprite>
     <sprite>sprites\spr_onion</sprite>
+    <sprite>sprites\spr_swing_effect</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -29,16 +30,23 @@
     <object>objects\obj_burger</object>
     <object>objects\obj_solid</object>
     <object>objects\obj_lettuce</object>
+    <object>objects\obj_lettuce_whole</object>
     <object>objects\obj_tomato</object>
+    <object>objects\obj_tomato_whole</object>
     <object>objects\obj_pickle</object>
+    <object>objects\obj_pickle_whole</object>
     <object>objects\obj_cheese</object>
+    <object>objects\obj_cheese_whole</object>
     <object>objects\obj_onion</object>
+    <object>objects\obj_onion_whole</object>
     <object>objects\obj_bun_top</object>
     <object>objects\obj_bun_bottom</object>
     <object>objects\obj_gui</object>
+    <object>objects\obj_swing_effect</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\Test</room>
+    <room>rooms\room1</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

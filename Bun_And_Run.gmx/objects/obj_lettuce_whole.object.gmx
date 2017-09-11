@@ -29,7 +29,8 @@
 vspd = random_range(-30,-10);
 grav = 1.5;
 gravOn = true;
-weight = 2;
+
+timer = 0;
 </string>
           </argument>
         </arguments>
@@ -54,9 +55,9 @@ weight = 2;
             <kind>1</kind>
             <string>move(obj_solid);
 
-if(bbox_left &lt; -50 || (bbox_right + 50) &gt; (view_xview[view_current] + view_wview[view_current])) {
-    instance_destroy();
-}
+timer++;
+
+if (timer &gt;= 180) {instance_destroy()}
 </string>
           </argument>
         </arguments>
