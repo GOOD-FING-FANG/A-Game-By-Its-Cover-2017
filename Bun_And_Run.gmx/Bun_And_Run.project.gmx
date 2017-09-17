@@ -16,6 +16,7 @@
     <sprite>sprites\spr_cheese</sprite>
     <sprite>sprites\spr_onion</sprite>
     <sprite>sprites\spr_swing_effect</sprite>
+    <sprite>sprites\spr_arrow</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -26,6 +27,9 @@
     <script>scripts\scr_player_active.gml</script>
     <script>scripts\generator.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\font0</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_burger</object>
     <object>objects\obj_solid</object>
@@ -43,8 +47,12 @@
     <object>objects\obj_bun_bottom</object>
     <object>objects\obj_gui</object>
     <object>objects\obj_swing_effect</object>
+    <objects name="Intro">
+      <object>objects\obj_menu</object>
+    </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\Intro</room>
     <room>rooms\Test</room>
     <room>rooms\room1</room>
   </rooms>
