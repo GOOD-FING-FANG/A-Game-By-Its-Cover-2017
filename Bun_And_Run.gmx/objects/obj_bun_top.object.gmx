@@ -31,6 +31,8 @@ grav = 0;
 gravOn = true;
 vspd = 0;
 hspd = 0;
+
+max_vspd = 15;
 </string>
           </argument>
         </arguments>

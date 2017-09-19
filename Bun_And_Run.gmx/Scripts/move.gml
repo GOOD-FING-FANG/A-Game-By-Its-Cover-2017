@@ -3,7 +3,7 @@ var collision_object = argument0;
 
 //Apply gravity
 if (!place_meeting(x, y+1, obj_solid) && gravOn) {
-    vspd = min(25,vspd + grav);
+    vspd = min(max_vspd,vspd + grav);
 }
 
 //Horizontal Collision

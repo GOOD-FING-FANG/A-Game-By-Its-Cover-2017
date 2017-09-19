@@ -17,8 +17,17 @@
     <sprite>sprites\spr_onion</sprite>
     <sprite>sprites\spr_swing_effect</sprite>
     <sprite>sprites\spr_arrow</sprite>
+    <sprite>sprites\spr_whole_lettuce</sprite>
+    <sprite>sprites\spr_whole_tomato</sprite>
+    <sprite>sprites\spr_whole_onion</sprite>
+    <sprite>sprites\spr_whole_cheese</sprite>
+    <sprite>sprites\spr_whole_pickle</sprite>
+    <sprite>sprites\spr_flip</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\bgr_brick</background>
+    <background>background\bgr_brick_tileset</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\apply_friction.gml</script>
@@ -34,15 +43,10 @@
     <object>objects\obj_burger</object>
     <object>objects\obj_solid</object>
     <object>objects\obj_lettuce</object>
-    <object>objects\obj_lettuce_whole</object>
     <object>objects\obj_tomato</object>
-    <object>objects\obj_tomato_whole</object>
     <object>objects\obj_pickle</object>
-    <object>objects\obj_pickle_whole</object>
     <object>objects\obj_cheese</object>
-    <object>objects\obj_cheese_whole</object>
     <object>objects\obj_onion</object>
-    <object>objects\obj_onion_whole</object>
     <object>objects\obj_bun_top</object>
     <object>objects\obj_bun_bottom</object>
     <object>objects\obj_gui</object>
@@ -50,6 +54,7 @@
     <objects name="Intro">
       <object>objects\obj_menu</object>
     </objects>
+    <object>objects\obj_flip</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\Intro</room>
